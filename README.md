@@ -31,3 +31,7 @@
  ### logout
  - logout (post api)
  - login error handling on invalid credintials
+
+ ### feed
+ - get the feed api and store the feed using redux
+ - get feed data and display in cards
