@@ -27,3 +27,7 @@
  ### Redirect to login not authenticated
  - should not access across routes
  - if token is not present , redirect to login page
+
+ ### logout
+ - logout (post api)
+ - login error handling on invalid credintials
