@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { BASE_URL } from '../utils/constants'
 import UserCard from './UserCard'
 import { useDispatch } from 'react-redux'
+import { addUser } from '../utils/userSlice'
 
 const EditProfile = ({user}) => {
     const [firstName, setFirstName] = useState(user.firstName)
@@ -12,8 +13,9 @@ const EditProfile = ({user}) => {
     const [age, setAge] = useState(user.age)
     const [about, setAbout] = useState(user.about)
     const [error, setError] = useState("");
+    
     const dispatch = useDispatch();
-    const[showToast, setShowToast] = useState(false);
+    const [toast, setToast] = useState(false);
 
     const saveProfile = async() => {
         setError('');
@@ -27,12 +29,13 @@ const EditProfile = ({user}) => {
                 about
             }, {withCredentials: true});
             dispatch(addUser(res?.data?.data));
-            setShowToast(true);
+            setToast(true);
             setTimeout(() => {
-                setShowToast(false);
-            },3000);
+                setToast(false);
+            }, 3000);
+           
         } catch (error) {
-            setError(error.response.data);
+            setError(error.response?.data || error.message);
         }
     }
 
@@ -113,7 +116,7 @@ onChange={(e) => setAbout(e.target.value)}
 />
 </fieldset>
     </div>
-    
+    <p className='text-red-500'>{error}</p>
     <div className="card-actions justify-center">
       <button 
       className="btn btn-primary"
@@ -127,14 +130,13 @@ onChange={(e) => setAbout(e.target.value)}
   </div>
   <UserCard user={{firstName,lastName,photoUrl, age, gender, about}}/>
 </div>
-{showToast && (
+{toast && (
     <div className="toast toast-top toast-center">
-     <div className="alert alert-success">
-     <span>Profile saved successfully.</span>
-     </div>
-     </div>
-)};
-
+    <div className="alert alert-success">
+      <span>Profile saved successfully.</span>
+    </div>
+  </div>
+)}
 </>
   )
 }
