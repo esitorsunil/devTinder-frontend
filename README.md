@@ -35,3 +35,10 @@
  ### feed
  - get the feed api and store the feed using redux
  - get feed data and display in cards
+
+  ### Edit Profile
+  - form handling with useState
+  - save profile using patch to db
+  - update in page using store
+  - UI with toast notify
+  - Reusable component
