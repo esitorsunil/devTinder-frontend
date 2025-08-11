@@ -50,3 +50,5 @@
 
 ### Show Request (new page)
   - same like get connection steps, UI (accept, reject)
+  - accept/reject post data using axios
+  - removeRequest data in store using filter method in array
