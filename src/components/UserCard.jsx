@@ -4,10 +4,12 @@ const UserCard = ({user}) => {
   console.log(user)
   const {firstName, lastName, photoUrl, gender, age, about} = user
   return (
-    <div className="card bg-base-300 w-96 shadow-sm">
+    <div className="card card-border bg-base-300 w-96 shadow-sm">
   <figure>
     <img
+    className='w-full h-80 object-cover'
       src={photoUrl}
+
       alt="Shoes" />
   </figure>
   <div className="card-body">

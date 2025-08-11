@@ -110,6 +110,7 @@ const EditProfile = ({user}) => {
 <fieldset className="fieldset">
   <legend className="fieldset-legend">About:</legend>
 <textarea 
+maxLength="200"
 className="textarea" 
 value={about}
 onChange={(e) => setAbout(e.target.value)}

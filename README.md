@@ -42,3 +42,8 @@
   - update in page using store
   - UI with toast notify
   - Reusable component
+
+ ### Get connection
+  - get connection data detch from api
+  - create slice and store and dispatch the data from redux
+  - display data using useSelector and map it each data in jsx (UI setup)
