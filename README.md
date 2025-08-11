@@ -43,7 +43,10 @@
   - UI with toast notify
   - Reusable component
 
- ### Get connection
+ ### Get connection (new page)
   - get connection data detch from api
   - create slice and store and dispatch the data from redux
   - display data using useSelector and map it each data in jsx (UI setup)
+
+### Show Request (new page)
+  - same like get connection steps, UI (accept, reject)
