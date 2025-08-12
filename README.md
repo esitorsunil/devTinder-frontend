@@ -52,3 +52,7 @@
   - same like get connection steps, UI (accept, reject)
   - accept/reject post data using axios
   - removeRequest data in store using filter method in array
+
+#### UserCard on Feed
+  - Send/ignore the user from the feed (post api)
+  - removeUser from store to display new user

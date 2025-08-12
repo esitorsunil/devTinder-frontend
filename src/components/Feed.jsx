@@ -9,6 +9,8 @@ const Feed = () => {
   const dispatch = useDispatch();
   const feed = useSelector((store) => store.feed)
 
+ 
+
   const getFeed = async() => {
     if(feed) return
     try {
@@ -22,6 +24,10 @@ const Feed = () => {
   useEffect(() => {
     getFeed();
   }, [])
+
+  if(!feed) return
+
+  if(feed.length <= 0) return <div className='text-center my-10 text-xl'>No new users found</div>
   
   return (
     feed && (
