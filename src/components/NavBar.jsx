@@ -19,7 +19,7 @@ const NavBar = () => {
   return (
     <div className="navbar bg-base-300 shadow-sm">
     <div className="flex-1">
-      <Link to = "/" className="btn btn-ghost text-xl">DevTinder</Link>
+      <Link to = "/" className="btn btn-ghost text-xl"><img width="48" height="48" src="https://img.icons8.com/color/48/link--v1.png" alt="link--v1"/>DevTinder</Link>
     </div>
     <div className="flex gap-2">
     {user && (

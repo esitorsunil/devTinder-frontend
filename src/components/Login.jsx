@@ -8,9 +8,28 @@ import { BASE_URL } from '../utils/constants';
 const Login = () => {
   const [emailId, setEmailId] = useState("tilak23@gmail.com");
   const [password, setPassword] = useState("Tilak@123");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [isLoginForm, setIsLoginForm] = useState(true);
   const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleSignUp = async() => {
+    try {
+      const res = await axios.post(BASE_URL + "/signup", {
+        firstName,
+        lastName,
+        emailId,
+        password
+      }, 
+    {withCredentials: true}); 
+      dispatch(addUser(res?.data?.data))
+      navigate("/profile")
+    } catch (error) {
+      setError(error?.response?.data || "Something went wrong")
+    } 
+  };
 
   const handleLogin = async() => {
     try {
@@ -30,10 +49,38 @@ const Login = () => {
     <div className='flex justify-center my-10'>
     <div className="card card-border bg-base-300 w-96">
   <div className="card-body">
-    <h2 className="card-title justify-center">Login</h2>
+    <h2 className="card-title justify-center">
+      {isLoginForm ? "Login" : "Register"}
+    </h2>
 
     <div>
+      {!isLoginForm && (
+        <>
     <fieldset className="fieldset">
+  <legend className="fieldset-legend">First Name:</legend>
+ <label className="input ">
+  <input type="text" 
+  value={firstName}
+  onChange = {(e) => setFirstName(e.target.value)} 
+  required 
+  />
+</label>
+</fieldset>
+
+<fieldset className="fieldset my-1">
+  <legend className="fieldset-legend">Last Name:</legend>
+ <label className="input">
+  <input type="text" 
+  value={lastName}
+  onChange = {(e) => setLastName(e.target.value)} 
+  required 
+  />
+</label>
+</fieldset>
+</>
+)}
+
+    <fieldset className="fieldset my-1">
   <legend className="fieldset-legend">Email</legend>
  <label className="input validator">
   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -58,7 +105,7 @@ const Login = () => {
 <div className="validator-hint hidden">Enter valid email address</div>
 </fieldset>
 
-<fieldset className="fieldset my-2">
+<fieldset className="fieldset my-1">
   <legend className="fieldset-legend">Password</legend>
 <label className="input validator">
   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -97,12 +144,13 @@ const Login = () => {
     <div className="card-actions justify-center">
       <button 
       className="btn btn-primary"
-      onClick={handleLogin}
+      onClick={isLoginForm ? handleLogin : handleSignUp}
       >
-        Login
+        {isLoginForm ? "Login" : "Register"}
         </button>
 
     </div>
+    <p onClick={() => setIsLoginForm(!isLoginForm)} className='m-auto py-2 cursor-pointer'>{isLoginForm ? "Don't have an account? Register here" : "Already have an account? Login here"}</p>
     </div>
   </div>
 </div>

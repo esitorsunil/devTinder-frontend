@@ -56,3 +56,10 @@
 #### UserCard on Feed
   - Send/ignore the user from the feed (post api)
   - removeUser from store to display new user
+
+### SignUp Page
+  - Create a sign up within the login component using conditional rendering
+  - Bug fixed of adddata and profile
+
+### Testing
+  - Tested the whole app workflow using E2E Testing  
