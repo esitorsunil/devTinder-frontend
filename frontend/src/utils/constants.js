@@ -1,1 +1,0 @@
-export const BASE_URL =  "https://devtinder-backend-jep4.onrender.com" ;

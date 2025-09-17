@@ -7,6 +7,7 @@ import Profile from "./components/Profile"
 import Login from "./components/Login"
 import Connections from "./components/Connections"
 import Requests from "./components/Requests"
+import PrivacyPolicy from "./components/PrivacyPolicy"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path= "/profile" element={<Profile />} />
         <Route path= "/connection" element={<Connections/>} />
         <Route path= "/requests" element={<Requests/>} />
+        <Route path= "/privacy-policy" element={<PrivacyPolicy/>} />
         </Route>
       </Routes>
     </BrowserRouter>
