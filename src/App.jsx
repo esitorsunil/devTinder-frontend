@@ -8,6 +8,7 @@ import Login from "./components/Login"
 import Connections from "./components/Connections"
 import Requests from "./components/Requests"
 import PrivacyPolicy from "./components/PrivacyPolicy"
+import Payment from "./components/Payment"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path= "/profile" element={<Profile />} />
         <Route path= "/connection" element={<Connections/>} />
         <Route path= "/requests" element={<Requests/>} />
+        <Route path= "/payment" element={<Payment/>} />
         <Route path= "/privacy-policy" element={<PrivacyPolicy/>} />
         </Route>
       </Routes>
