@@ -63,3 +63,7 @@
 
 ### Testing
   - Tested the whole app workflow using E2E Testing  
+
+### Razorypay payment
+  - Signup and create razorpay acc
+  - Payment UI
