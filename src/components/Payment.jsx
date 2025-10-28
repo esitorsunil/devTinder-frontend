@@ -14,6 +14,28 @@ const Payment = () => {
 
         });
         // open the razorpay dialog box
+
+        const {keyId, amount, currency, notes, orderId} = order.data
+
+        const options = {
+            key: keyId, 
+            amount,
+            currency: 'INR',
+            name: 'Dev Tinder',
+            description: 'Preimum to connect developers',
+            order_id: orderId,
+            prefill: {
+              name: notes.firstName + " "+ notes.lastName,
+              email: notes.emailId,
+              contact: '9999999999'
+            },
+            theme: {
+              color: '#F37254'
+            },
+          };
+
+        const rzp = new window.Razorpay(options);
+      rzp.open();
     }
   return (
     <div>
