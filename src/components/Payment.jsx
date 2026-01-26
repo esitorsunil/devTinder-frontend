@@ -1,5 +1,4 @@
 import axios from 'axios'
-import React from 'react'
 import { BASE_URL } from '../utils/constants'
 
 const Payment = () => {
@@ -20,7 +19,7 @@ const Payment = () => {
         const options = {
             key: keyId, 
             amount,
-            currency: 'INR',
+            currency,
             name: 'Dev Tinder',
             description: 'Preimum to connect developers',
             order_id: orderId,
