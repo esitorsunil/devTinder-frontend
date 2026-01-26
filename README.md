@@ -66,4 +66,9 @@
 
 ### Razorypay payment
   - Signup and create razorpay acc
-  - Payment UI
+  - Payment UI from razorpay docs
+  - Update the UI, when the payment is successfull from razorpay docs
+
+### Real time chat using Websocket
+  - Chat UI with targetid of the user using useParams make as dynamic url
+  
